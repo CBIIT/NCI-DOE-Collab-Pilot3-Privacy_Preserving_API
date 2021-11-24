@@ -12,10 +12,12 @@ Experienced data scientists, computational scientists, artificial intelligence r
 
 
 ### Uniqueness
-Word embeddings have been recognized as one of the key breakthroughs for various NLP applications such as document classification, and machine translation. Word embeddings provide a way of converting words into numerical vectors which are used as inputs to DL models. These vectors have relatively lower dimensional features than the one-hot representation. Word embeddings have been shown to capture semantic information via observed similarities in word contexts, where the vector representations of semantically similar words are close to each other. Thus, they insert contextual knowledge into models helping DL algorithms to automatically understand word analogies and capture their semantic properties. Figure below illustrates the traditional word embeddings process. It starts by collecting all unique words in a corpus as a vocabulary list of size V . Then each word in the vocabulary list is assigned to an integer index i, where i 2 {1, 2, . . . V }.
+Word embeddings have been recognized as one of the key breakthroughs for various NLP applications such as document classification, and machine translation. Word embeddings provide a way of converting words into numerical vectors which are used as inputs to DL models. These vectors have relatively lower dimensional features than the one-hot representation. Word embeddings have been shown to capture semantic information via observed similarities in word contexts, where the vector representations of semantically similar words are close to each other. Thus, they insert contextual knowledge into models helping DL algorithms to automatically understand word analogies and capture their semantic properties. Figure 1 below illustrates the traditional word embeddings process. It starts by collecting all unique words in a corpus as a vocabulary list of size V . Then each word in the vocabulary list is assigned to an integer index i, where i 2 {1, 2, . . . V }.
 
 
+![Word Embedding example](Images/PP_API.png)
 
+##### Figure1 : Word embedding example diagram, where vocabulary dictionary converts words in the input sentence to the corresponding indices and V is the vocabulary dictionary size.
 
 The vocabulary is saved in a dictionary format, where keys are the word tokens and values are their indices. For each document of size L in the dataset, the words are converted to their corresponding indices using the vocabulary dictionary.
 
