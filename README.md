@@ -1,5 +1,4 @@
-# NCI-DOE-Collab-Pilot3-Privacy_Preserving_API
-
+# NCI-DOE-Collab-Pilot3-Privacy_Preserving_DeepLearning_NLP_models
 ### Description
 
 Population cancer registries can benefit from Deep Learning (DL) to automatically extract cancer characteristics from the high volume of unstructured pathology text reports they process annually. The success of DL to tackle this and other real-world problems is proportional to the availability of large, labeled datasets for model training. Although collaboration among cancer registries is essential to fully exploit the promise of DL, privacy and confidentiality concerns are main obstacles for data sharing across cancer registries. Moreover, DL for natural language processing (NLP) requires sharing a vocabulary dictionary for the embedding layer which may contain patient identifiers. Thus, even distributing the trained models across cancer registries causes a privacy violation issue. We propose approaches of DL NLP model distribution via privacy-preserving transfer learning approaches without sharing sensitive data.
