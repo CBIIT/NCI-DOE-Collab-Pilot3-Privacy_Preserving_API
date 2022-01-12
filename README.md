@@ -12,11 +12,12 @@ Experienced data scientists, computational scientists, artificial intelligence r
 
 ## Uniqueness
 ### The Traditional Approach
-Word embeddings have been recognized as one of the key breakthroughs for various NLP applications such as document classification and machine translation. Word embeddings provide a way of converting words into numerical vectors which are used as inputs to DL models. These vectors have relatively lower dimensional features than the one-hot representation. Word embeddings have been shown to capture semantic information via observed similarities in word contexts, where the vector representations of semantically similar words are close to each other. Thus, they insert contextual knowledge into models helping DL algorithms to automatically understand word analogies and capture their semantic properties. Figure 1 below illustrates the traditional word-embedding process. It starts by collecting all unique words in a corpus as a vocabulary list of size _V_. Then each word in the vocabulary list is assigned to an integer index _i_, where _i_ ∈ 2 {1, 2, . . . _V_}. 
-
-The vocabulary is saved in a dictionary format, where keys are the word tokens and values are their indices. For each document of size _L_ in the dataset, the words are converted to their corresponding indices using the vocabulary dictionary.
-
-These indices are used to access the corresponding word vector representations in the embedding LUT. The number of embedding LUT parameters is proportional to the vocabulary size and word vector representation length. That is, if a text corpus has _V_ unique words and the feature representation of each word is a d-sized vector, then the embedding LUT is _d×V_ dimensional, and each word has a notation that corresponds to _d_ by a one-dimensional embedding vector. 
+Word embeddings have been recognized as one of the key breakthroughs for various NLP applications such as document classification and machine translation. Word embeddings provide a way of converting words into numerical vectors which are used as inputs to DL models. These vectors have relatively lower dimensional features than the one-hot representation. Word embeddings have been shown to capture semantic information via observed similarities in word contexts, where the vector representations of semantically similar words are close to each other. Thus, they insert contextual knowledge into models helping DL algorithms to automatically understand word analogies and capture their semantic properties. Figure 1 below illustrates the traditional word-embedding process. 
+1. It starts by collecting all unique words in a corpus as a vocabulary list of size _V_. 
+2. Then each word in the vocabulary list is assigned to an integer index _i_, where _i_ ∈ 2 {1, 2, . . . _V_}. 
+3. The vocabulary is saved in a dictionary format, where keys are the word tokens and values are their indices. 
+4. For each document of size _L_ in the dataset, the words are converted to their corresponding indices using the vocabulary dictionary.
+5. These indices are used to access the corresponding word vector representations in the embedding LUT. The number of embedding LUT parameters is proportional to the vocabulary size and word vector representation length. That is, if a text corpus has _V_ unique words and the feature representation of each word is a _d_-sized vector, then the embedding LUT is _d×V_ dimensional, and each word has a notation that corresponds to _d_ by a one-dimensional embedding vector. 
 
 ![Word Embedding example](Images/PP_API.png)
 
