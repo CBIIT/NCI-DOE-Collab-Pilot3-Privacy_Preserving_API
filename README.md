@@ -11,16 +11,18 @@ Experienced data scientists, computational scientists, artificial intelligence r
 
 
 ## Uniqueness
+### The Traditional Approach
 Word embeddings have been recognized as one of the key breakthroughs for various NLP applications such as document classification and machine translation. Word embeddings provide a way of converting words into numerical vectors which are used as inputs to DL models. These vectors have relatively lower dimensional features than the one-hot representation. Word embeddings have been shown to capture semantic information via observed similarities in word contexts, where the vector representations of semantically similar words are close to each other. Thus, they insert contextual knowledge into models helping DL algorithms to automatically understand word analogies and capture their semantic properties. Figure 1 below illustrates the traditional word-embedding process. It starts by collecting all unique words in a corpus as a vocabulary list of size _V_. Then each word in the vocabulary list is assigned to an integer index _i_, where _i_ ∈ 2 {1, 2, . . . _V_}. 
-
-![Word Embedding example](Images/PP_API.png)
-
-**Figure 1**: Traditional word-embedding example diagram, where vocabulary dictionary converts words in the input sentence to the corresponding indices and _V_ is the vocabulary dictionary size.
 
 The vocabulary is saved in a dictionary format, where keys are the word tokens and values are their indices. For each document of size _L_ in the dataset, the words are converted to their corresponding indices using the vocabulary dictionary.
 
 These indices are used to access the corresponding word vector representations in the embedding LUT. The number of embedding LUT parameters is proportional to the vocabulary size and word vector representation length. That is, if a text corpus has _V_ unique words and the feature representation of each word is a d-sized vector, then the embedding LUT is _d×V_ dimensional, and each word has a notation that corresponds to _d_ by a one-dimensional embedding vector. 
 
+![Word Embedding example](Images/PP_API.png)
+
+**Figure 1**: Traditional word-embedding example diagram, where vocabulary dictionary converts words in the input sentence to the corresponding indices and _V_ is the vocabulary dictionary size.
+
+### The New Approach
 This process results in a document matrix of size _L×d_ which is used as input to the convolution layer. Since the dictionary is associated to the NLP DL model trained on the data corpus, it is required when the trained model is used for inference. Since this dictionary is comprised of word tokens that appear in the data corpus of the cancer registry that provides the training data, it is expected to include word tokens associated with patient last names and other protected identifier information. Thus, the trained model and its related dictionary does not preserve data privacy if it is shared with another cancer registry.
 
 The word vector representations can be learned from a large text corpus through Word2Vec or GloVe techniques separately from the other model parameters. They can also be learned from a task-specific dataset with the other model parameters through back propagation. In this paper, the word-embedding parameters are randomly initialized and learned through back propagation since previous studies have shown to work well for this application.
